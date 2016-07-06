@@ -1,6 +1,6 @@
 # Biblioteca de integração de NFS-e via API com sistema da prefeitura de Osasco
 
-# Descrição
+## Descrição
 
 A biblioteca opennfse_osasco em Ruby possui total integração com serviço de nfse-e da prefeitura de Osasco.
 
@@ -34,7 +34,6 @@ nfse.register
 ```ruby
 nfse.homologacao = true
 ```
-
 
 ## Contribuições
 
