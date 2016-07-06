@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Emerson Jose"]
   spec.email         = ["emersonjprogramador@gmail.com"]
 
-  spec.summary       = %q{Gerador de nfse vai API com sistema de NFS-e da prefeitura de Osasco}
-  spec.description   = %q{Gem para comunicação vai API com o sistema de NFS-e da prefeitura de Osasco}
+  spec.summary       = %q{Gerador de nfse via API com sistema de NFS-e da prefeitura de Osasco}
+  spec.description   = %q{Gem para comunicação via API com o sistema de NFS-e da prefeitura de Osasco}
   spec.homepage      = "https://github.com/emersonjsouza/opennfse_osasco"
   spec.license       = "MIT"
 

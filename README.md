@@ -1,41 +1,51 @@
-# OpennfseOsasco
+# Biblioteca de integração de NFS-e via API com sistema da prefeitura de Osasco
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/opennfse_osasco`. To experiment with that code, run `bin/console` for an interactive prompt.
+# Descrição
 
-TODO: Delete this and the text above, and describe your gem
+A biblioteca opennfse_osasco em Ruby possui total integração com serviço de nfse-e da prefeitura de Osasco.
 
-## Installation
+##Instalação
 
-Add this line to your application's Gemfile:
+ - Adicione a biblioteca ao seu Gemfile.
 
 ```ruby
 gem 'opennfse_osasco'
 ```
+ - Execute o comando bundle install.
 
-And then execute:
+## Emissão de NFS-e
 
-    $ bundle
+ - Para iniciar uma emissão de NFS-e, você precisa criar uma instancia da classe 'OpennfseOsasco::Nfse' e informar sua chave de acesso do para emissão de NFS-e via API
 
-Or install it yourself as:
+```ruby
+nfse = OpennfseOsasco::Nfse.new("CHAVE-ACESSO")
 
-    $ gem install opennfse_osasco
+nfse.valor = 0.10
+nfse.tributacao = {atividade: 1.08}
+nfse.tomador = {cnpj: "00000000000000", bairro: "Jd Veloso", nome: "Empresa",
+                cidade: "São Paulo", complemento: "4° andar", uf: "SP",
+                logradouro: "Benedito Alves turibio", numero: "10", pais: "Brasil", tipo_logradouro: "Rua"}
 
-## Usage
+nfse.register
+```
 
-TODO: Write usage instructions here
+ - Para emitir NFS-e em homologação a propriedade homologacao da classe 'OpennfseOsasco::Nfse' precisa estar true
 
-## Development
+```ruby
+nfse.homologacao = true
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## Contribuições
 
-## Contributing
+Achou e corrigiu um bug ou tem alguma feature em mente e deseja contribuir?
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/opennfse_osasco.
-
+* Faça um fork
+* Adicione sua feature ou correção de bug (`git checkout -b my-new-feature`)
+* Commit suas mudanças (`git commit -am 'Added some feature'`)
+* Rode um push para o branch (`git push origin my-new-feature`)
+* Envie um Pull Request
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
