@@ -1,0 +1,40 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:rgm="http://schemas.datacontract.org/2004/07/Rgm.Eissnfe.Negocio.WebServices.Mensagem" xmlns:rgm1="http://schemas.datacontract.org/2004/07/Rgm.Eissnfe.Dominio.DataTransferObject.Prestador" xmlns:rgm2="http://schemas.datacontract.org/2004/07/Rgm.Eissnfe.Dominio.DataTransferObject.Contribuinte">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Emitir>
+         <tem:request>
+            <rgm:NotaFiscal>
+               <rgm1:Aliquota><%= tributacao.aliquota %></rgm1:Aliquota>
+               <rgm1:Atividade><%= tributacao.atividade %></rgm1:Atividade>
+               <rgm1:ChaveAutenticacao><%= chave_autenticacao %></rgm1:ChaveAutenticacao>
+               <rgm1:Homologacao><%= homologacao %></rgm1:Homologacao>
+               <rgm1:NotificarTomadorPorEmail><%= notificar_tomador_Email %></rgm1:NotificarTomadorPorEmail>
+               <rgm1:SubstituicaoTributaria><%= tributacao.substituicao_tributaria %></rgm1:SubstituicaoTributaria>
+               <rgm1:Tomador>
+                  <rgm2:CNPJ><%= tomador.cnpj %></rgm2:CNPJ>
+                  <rgm2:Endereco>
+                     <rgm2:Bairro><%= tomador.bairro %></rgm2:Bairro>
+                     <rgm2:Cidade><%= tomador.cidade %></rgm2:Cidade>
+                     <rgm2:Complemento><%= tomador.cidade %></rgm2:Complemento>
+                     <rgm2:Estado><%= tomador.uf %></rgm2:Estado>
+                     <rgm2:Logradouro><%= tomador.uf %></rgm2:Logradouro>
+                     <rgm2:Numero><%= tomador.numero %></rgm2:Numero>
+                     <rgm2:Pais><%= tomador.pais %></rgm2:Pais>
+                     <rgm2:TipoLogradouro><%= tomador.tipo_logradouro %></rgm2:TipoLogradouro>
+                  </rgm2:Endereco>
+                  <rgm2:InscricaoMunicipal>?</rgm2:InscricaoMunicipal>
+                  <rgm2:Nome><%= tomador.nome %></rgm2:Nome>
+               </rgm1:Tomador>
+               <rgm1:Valor><%= valor %></rgm1:Valor>
+               <rgm1:ValorCSLL><%= tributacao.valor_csll %></rgm1:ValorCSLL>
+               <rgm1:ValorCofins><%= tributacao.valor_cofins %></rgm1:ValorCofins>
+               <rgm1:ValorDeducao><%= tributacao.valor_deducao %></rgm1:ValorDeducao>
+               <rgm1:ValorINSS><%= tributacao.valor_inss %></rgm1:ValorINSS>
+               <rgm1:ValorIR><%= tributacao.valor_ir %></rgm1:ValorIR>
+               <rgm1:ValorOutrosImpostos><%= tributacao.valor_outros_impostos %></rgm1:ValorOutrosImpostos>
+               <rgm1:ValorPisPasep><%= tributacao.valor_pis_pasep %></rgm1:ValorPisPasep>
+            </rgm:NotaFiscal>
+         </tem:request>
+      </tem:Emitir>
+   </soapenv:Body>
+</soapenv:Envelope>
